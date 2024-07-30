@@ -1,0 +1,15 @@
+{
+	"dependencies": {
+		"@robertakarobin/eslint-config-ts": "^0.0.43",
+		"esbuild": "^0.21.1",
+		"tsx": "^4.9.3"
+	},
+	"description": "",
+	"name": "game-of-life",
+	"scripts": {
+		"build": "esbuild --bundle index.ts --outdir=. --format=esm",
+		"start": "esbuild --bundle index.ts --outdir=. --format=esm --watch --servedir=."
+	},
+	"type": "module",
+	"version": "1.0.0"
+}

@@ -1,0 +1,21 @@
+{
+	"editor.insertSpaces": false,
+	"editor.tabSize": 2,
+
+	"eslint.enable": true,
+	"eslint.options": {
+		"extensions": [".js", ".json", ".ts"]
+	},
+	"eslint.validate": [
+		"javascript",
+		"json",
+		"jsonc",
+		"typescript"
+	],
+
+	"files.insertFinalNewline": true,
+	"files.trimTrailingWhitespace": true,
+
+	"typescript.tsdk": "node_modules/typescript/lib",
+	"typescript.enablePromptUseWorkspaceTsdk": true
+}

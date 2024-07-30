@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Game of Life</title>
+	<style>
+		.overlay {
+			position: absolute;
+			display: grid;
+			grid-template-columns: 1fr;
+			top: 24px;
+			left: 24px;
+			padding: 6px;
+			background-color: #b0b0b0;
+			border-radius: 6px;
+		}
+
+		.startButton {
+			width: 100%;
+			padding: 6px;
+			background-color: #4CAF50;
+			color: #000000;
+			font-size: 16px;
+			border: none;
+			border-radius: 6px;
+			cursor: pointer;
+			transition: background .3s ease-in-out;
+			font-weight: normal;
+		}
+
+		.startButton:hover {
+			background-color: #45a049;
+		}
+
+		.rangeslider {
+			width: 100%;
+			margin: auto;
+			text-align: center;
+		}
+
+		.myslider {
+			-webkit-appearance: none;
+			appearance: none;
+			width: 100%;
+			height: 20px;
+			background: #e0e0e0;
+			outline: none;
+			border-radius: 10px;
+		}
+
+		.myslider::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			appearance: none;
+			width: 25px;
+			height: 25px;
+			background: #4CAF50;
+			cursor: pointer;
+			border-radius: 50%;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+			transition: background .3s ease-in-out;
+		}
+
+		.myslider::-moz-range-thumb {
+			width: 25px;
+			height: 25px;
+			background: #4CAF50;
+			cursor: pointer;
+			border-radius: 50%;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+			transition: background .3s ease-in-out;
+		}
+
+		.myslider::-webkit-slider-thumb:hover {
+			background: #45a049;
+		}
+
+		.myslider::-moz-range-thumb:hover {
+			background: #45a049;
+		}
+
+		h1 {
+			text-align: center;
+			color: #000000;
+		}
+
+		p {
+			text-align: center;
+			font-size: 18px;
+			color: #000000;
+			margin-bottom: 2px;
+		}
+
+		.commandDesc {
+			text-align: left;
+			font-size: 14px;
+			color: #000000;
+		}
+
+		#demo {
+			font-weight: bolder;
+			color: #000000;
+		}
+	</style>
+	<script src="/index.js" type="module"></script>
+</head>
+
+<body>
+	<div>
+		<div id="overlayContainer" class="overlay">
+			<button type="button" id="startButton" class="startButton">Start</button>
+			<div class="rangeslider">
+				<p>Sim Speed: <span id="demo"></span></p>
+				<input type="range" min="1" max="20" value="5" class="myslider" id="sliderRange">
+				<p>Commands:</p>
+				<p class="commandDesc">Pan: drag</p>
+				<p class="commandDesc">Start/Stop: Space</p>
+				<p class="commandDesc">Paint Cells: Ctrl + drag</p>
+				<p class="commandDesc">Erase Cells: Shift + drag</p>
+				<p class="commandDesc">Clear Grid: C</p>
+			</div>
+		</div>
+		<div id="gridContainer">
+			<canvas id="gridCanvas"></canvas>
+		</div>
+	</div>
+</body>
+
+</html>

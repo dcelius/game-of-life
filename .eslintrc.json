@@ -1,0 +1,6 @@
+{
+	"extends": "@robertakarobin/eslint-config-ts",
+	"ignorePatterns": [
+		"*.js"
+	]
+}
