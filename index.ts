@@ -94,6 +94,15 @@ function draw() {
 	ctx.scale(dpi, dpi);
 	ctx.translate(-0.5, -0.5);
 
+	for (const cell of sim.cells.values()) {
+		const topLeft = getTopLeftCornerOfCell(cell.x, cell.y);
+		if (topLeft.x < 0 || topLeft.y < 0 || topLeft.x > width || topLeft.y > height) {
+			continue;
+		}
+		ctx.fillStyle = `black`;
+		ctx.fillRect(topLeft.x, topLeft.y, cellSize, cellSize);
+	}
+
 	ctx.lineWidth = 1;
 	ctx.strokeStyle = `silver`;
 	ctx.beginPath();
@@ -110,15 +119,6 @@ function draw() {
 
 	ctx.closePath();
 	ctx.stroke();
-
-	for (const cell of sim.cells.values()) {
-		const topLeft = getTopLeftCornerOfCell(cell.x, cell.y);
-		if (topLeft.x < 0 || topLeft.y < 0 || topLeft.x > width || topLeft.y > height) {
-			continue;
-		}
-		ctx.fillStyle = `black`;
-		ctx.fillRect(topLeft.x, topLeft.y, cellSize, cellSize);
-	}
 
 	ctx.restore();
 }
